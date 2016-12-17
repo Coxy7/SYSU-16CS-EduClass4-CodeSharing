@@ -35,23 +35,28 @@
  * ``malloc`` can "turn a 2D pointer into an array whose elements are pointers"
 
 * Free
- * all the memory space you acquire by ``malloc`` needs to be freed
- * how to free a pointer:
-   1. pointer to a single variable``
-    int x;
-    int *p = &x;
-    free (p);
-    ``
-   2. pointer to an array``
-    int *p = (int *)malloc( sizeof(int) * 10 );
-    free (p);
-   ``
-   3. 2D pointer to an array of pointers```
-    int *p = (int **)malloc( sizeof(int *) * 10 );
-    for (int i = 0; i < 10; ++i) p[i] = (int *)malloc( sizeof(int) * 5 );
-    for (int i = 0; i < 10; ++i) free (p[i]);
-    free (p);
-   ```
+    * all the memory space you acquire by ``malloc`` needs to be freed
+    * how to free a pointer:
+        * pointer to a single variable
+        ```c
+        int x;
+        int *p = &x;
+        free (p);
+        ```
+        * pointer to an array
+        ```c
+        int *p = (int *)malloc( sizeof(int) * 10 );
+        free (p);
+        ```
+        * 2D pointer to an array of pointers
+        ```c
+        int *p = (int **)malloc( sizeof(int *) * 10 );
+        for (int i = 0; i < 10; ++i)
+            p[i] = (int *)malloc( sizeof(int) * 5 );
+        for (int i = 0; i < 10; ++i) 
+            free (p[i]);
+        free (p);
+        ```
  
 ## Sorting
 * Bubble sort
@@ -70,10 +75,10 @@
 * Big O Notation
  * defined in calculus
  * based on how many elementary operations are needed, with the *constants* and *"minor" parts* omitted
- > eg. 
-    $\frac{1}{2}n$ --> $O(n)$
-    $2n^2 + 10n + \sqrt n$ --> $O(n^2)$
-    $log_2 n$ --> $O(\text{log }n)$
+ > eg.  
+    ![](http://latex.codecogs.com/gif.latex?\\frac{1}{2}n\\rightarrow O(n))  
+    ![](http://latex.codecogs.com/gif.latex?2n^2 + 10n + \\sqrt n\\rightarrow O(n^2))  
+    ![](http://latex.codecogs.com/gif.latex?log_2 n\\rightarrow O(\\text{log }n))
 
  * [some samples](https://github.com/Carlxiao/SYSU-16CS-EduClass4-CodeSharing/blob/master/Doc/Time-Complexity-Sample.md)
  
