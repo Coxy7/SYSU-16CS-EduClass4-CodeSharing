@@ -39,8 +39,7 @@
     * how to free a pointer:
         * pointer to a single variable
         ```c
-        int x;
-        int *p = &x;
+        int *p = (int *)malloc( sizeof(int) );
         free (p);
         ```
         * pointer to an array
