@@ -22,19 +22,19 @@ int cmp_score(const tb * const a, const tb * const b){
 
 //-----------------------------------------------------
 void sort_by_gender(tb ** dat, int size){
-	myqsort(dat,0,size-1,cmp_gender);
+	myqsort( dat , 0 , size-1 , cmp_gender );
 }
 
 void sort_by_name(tb ** dat, int size){
-	myqsort(dat,0,size-1,cmp_name);
+	myqsort( dat , 0 , size-1 , cmp_name );
 }
 
 void sort_by_id(tb ** dat, int size){
-	myqsort(dat,0,size-1,cmp_id);
+	myqsort( dat , 0 , size-1 , cmp_id );
 }
 
 void sort_by_score(tb ** dat, int size){
-	myqsort(dat,0,size-1,cmp_score);
+	myqsort( dat , 0 , size-1 , cmp_score );
 }
 
 void myqsort(tb ** a,int l,int r,int (*cmp)(const tb * const,const tb * const)){
