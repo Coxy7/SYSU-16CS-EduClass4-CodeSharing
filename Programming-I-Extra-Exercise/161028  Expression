@@ -1,0 +1,29 @@
+//expression                   //基本思想：把一长串的式子用‘+’分成一段一段的乘法，逐段计算再相加
+#include<stdio.h>
+int main(){
+  long result=0,result2=1;              
+  long num;
+  char a;
+  scanf("%ld",&num);
+  result2 = num;
+  while ((a = getchar()) == '*'){
+    scanf ("%ld",&num);
+    result2 *= (num % 10000);
+    result2 %= 10000;
+}
+
+    result += result2;
+  while ( a != '\n' ){
+    scanf ("%ld",&num);
+    result2 = num;
+    while ((a = getchar()) == '*'){
+    scanf ("%ld",&num);
+    result2 *= (num % 10000);
+    result2 %= 10000;
+}
+    result += result2;
+    result %= 10000;
+}
+  printf("%ld\n",result % 10000);
+  return 0;
+}
